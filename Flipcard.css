@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Agrega la imagen de fondo aquí */
+  background-image: url('https://mcdn.wallpapersafari.com/medium/38/13/sQtEFD.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.page-title {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: aliceblue;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.flip-card-container {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.flip-card-container:hover .flip-card {
+  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+}
+/* Resto del CSS... (Sin cambios) */
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 0.5rem; */
+}
+.flip-card-front {
+  background-color: #333;
+  color: #fff;
+}
+.flip-card-back {
+  background-color: #9B8E8E;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 0.5rem; */
+}
+.flip-card-back p {
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+.flip-card-back p span {
+  display: block;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1.25rem;
+}
+
+
+@media (max-width: 1024px) {
+  .cards-container {
+    gap: 0.5rem;
+  }
+  .flip-card-container {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.25rem;
+  }
+  .cards-container {
+    gap: 0.25rem;
+  }
+  .flip-card-container {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  .page-title {
+    font-size: 1rem;
+  }
+  .cards-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .flip-card-container {
+    width: 250px;
+    height: 350px;
+  }
+}
