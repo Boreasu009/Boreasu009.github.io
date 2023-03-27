@@ -24,4 +24,4 @@ El proyecto consta de los siguientes archivos:
 
 ## Autor
 
-Tu Nombre - [Tu perfil de GitHub](https://github.com/tu_nombre_de_usuario)
+Boreasu009 - https://github.com/Boreasu009
